@@ -87,18 +87,19 @@ nav a {
     display: flex;
     flex-direction: row;
     align-items: center;
+    color: #ccc;
   }
 
   #navbar ul {
     display: flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     justify-content: center;
   }
 
   #main-doc {
     width: 100%;
     height: auto;
-    margin-left: 3rem;
+    margin-left: 2rem;
     margin-right: 5rem;
     margin-top: 150px;
   }
