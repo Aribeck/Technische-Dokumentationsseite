@@ -6,13 +6,8 @@ body {
   display: flex;
   margin: 0;
   background-color: #000000;
-  color: #ccc
+  color: #ccc;
 
-}
-nav {
-  flex-direction: column;
-  width: 50%;
-  max-width: 300px;
 }
 
 #navbar header {
@@ -44,8 +39,13 @@ nav a {
   display: block;
   padding: 0.5em;
   text-decoration: none;
-  color: #333;
+  color: #ccc;
 }
+
+.nav-link:hover {
+  color: #fff;
+}
+
 #navbar ul {
   list-style: none;
   padding: 0;
@@ -54,30 +54,18 @@ nav a {
   font-size: 1.8rem;
   
 }
-.example {
-  border: 2px solid black;
-  padding: 2rem;
-  margin-right: 500px;
-  background-color: #666666
-}
-.example_two {
-  border: 2px solid black;
-  padding: 2rem;
-  margin-right: 500px;
-  background-color: #666666;
-}
-.example_three {
-  border: 2px solid black;
-  padding: 2rem;
-  margin-right: 500px;
-  background-color: #666666;
-}
+.example,
+.example_one,
+.example_two,
+.example_three,
 .example_four {
   border: 2px solid black;
   padding: 2rem;
-  margin-right: 500px;
+  max-width: 100%;
   background-color: #666666;
+  margin-bottom: 2rem;
 }
+
 @media (max-width: 600px) {
   #navbar {
     position: fixed;
@@ -99,7 +87,7 @@ nav a {
   }
 
   #main-doc {
-    width: 100%;
+    max-width: 100%;
     height: auto;
     margin-left: 2rem;
     margin-right: 5rem;
