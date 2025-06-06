@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="de">
+ <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Was ist eine API?</title>
+  <link rel="stylesheet" href="style.css" />
+ </head>
+ <body>
+   <nav id="navbar">
+    <header>API Dokumentation</header>
+    <ul>
+     <li><a class="nav-link" href="#Einführung">Einführung</a></li>
+     <li><a class="nav-link" href="#Arten_von_API's">Arten von API's</a></li>
+     <li><a class="nav-link" href="#REST_API_Aufbau">REST API Aufbau</a></li>
+     <li><a class="nav-link" href="#JSON_Format">JSON Format</a></li>
+     <li><a class="nav-link" href="#Beispiel_Request">Beispiel Request</a></li>
+     <li><a class="nav-link" href="#Sicherheit">Sicherheit</a></li>
+     <li><a class="nav-link" href="#Fazit">Fazit</a></li>
+    </ul>
+   </nav>
+ <main id="main-doc">
+  <section class="main-section" id="Einführung">
+    <header>Einführung</header>
+    <p>Eine API (Application Programming Interface) ist eine Schnittstelle, die es zwei Softwareprogrammen erlaubt, miteinander zu kommunizieren. Sie stellt Funktionen, Daten und Dienste zur Verfügung, die von anderen Programmen genutzt werden können, ohne dass man den Quellcode der Anwendung kennen muss.</p>
+
+<p>Beispiel: Eine Wetter-App ruft aktuelle Wetterdaten über eine API eines Wetterdienstes ab – sie fragt also beim „Wetter-Server“ nach.</p>
+
+<p>APIs werden in fast allen modernen Anwendungen genutzt – ob beim Online-Shopping, beim Login mit Google oder beim Versenden von Nachrichten.</p><hr>
+  </section>
+  <section class="main-section" id="Arten_von_API's">
+    <header>Arten von API's</header>
+    <p>Es gibt verschiedene Typen von APIs, je nach Einsatzzweck:</p>
+
+<p><strong>1. REST (Representational State Transfer)</strong></p>
+<ul>
+  <li>Weit verbreitet im Web.</li>
+  <li>Nutzt HTTP-Methoden wie GET, POST, PUT, DELETE.</li>
+  <li>Arbeitet meist mit JSON als Datenformat.</li>
+</ul>
+<p><strong>2. SOAP (Simple Object Access Protocol)</strong></p>
+<ul>
+  <li>Älteres Protokoll.</li>
+  <li>Nutzt XML zur Kommunikation.</li>
+  <li>Komplexer, aber stark typisiert und sicherer in bestimmten Umgebungen.</li>
+</ul>
+<p><strong>3. GraphQL</strong></p>
+<ul>
+  <li>Flexibles API-System von Facebook.</li>
+  <li>Ermöglicht, genau die Daten abzufragen, die man benötigt.</li>
+  <li>Moderne Alternative zu REST, aber etwas komplexer in der Einrichtung.</li>
+</ul><hr>
+  </section>
+  <section class="main-section" id="REST_API_Aufbau">
+    <header>REST API Aufbau</header>
+    <p>Eine typische REST-API besteht aus sogenannten Endpunkten, also bestimmten URLs, über die Daten abgerufen oder gesendet werden.</p>
+
+    <p><strong>HTTP-Methoden:</strong></p>
+    <ul>
+      <li>GET – Daten abrufen (z. B. Nutzer anzeigen)</li>
+      <li>POST – Neue Daten anlegen (z. B. Nutzer registrieren)</li>
+      <li>PUT – Vorhandene Daten vollständig aktualisieren</li>
+      <li>PATCH – Teilweise Aktualisierung</li>
+      <li>DELETE – Daten löschen</li>
+    </ul>
+    <div class="example">
+    <p>Beispiel:</p>
+    <p><code>http</code></p>
+    <p><code>GET https://api.example.com/users</code></p>
+    <p><code>POST https://api.example.com/users</code></p>
+    </div>
+    <p><strong>HTTP-Statuscodes:</strong></p>
+    <ul>
+      <li>200 OK – Alles erfolgreich</li>
+      <li>201 Created – Neue Ressource erfolgreich erstellt</li>
+      <li>400 Bad Request – Ungültige Anfrage</li>
+      <li>401 Unauthorized – Zugriff verweigert (z. B. fehlender API-Key)</li>
+      <li>404 Not Found – Ressource nicht gefunden</li>
+      <li>500 Internal Server Error – Fehler auf dem Server</li>
+    </ul><hr>
+  </section>
+  <section class="main-section" id="JSON_Format">
+    <header>JSON Format</header>
+    <p>JSON steht für JavaScript Object Notation und ist das     Standardformat für Datenaustausch bei Web-APIs. Es ist leicht lesbar und einfach in vielen Programmiersprachen zu verwenden.</p>
+    <div class="example_two">
+    <p>Beispiel:</p>
+    <p><code>json</code></p>
+    <p><code>{<br>
+       "name": "Max",<br>
+       "alter": 25,<br>
+       "interessen": ["Programmieren", "Lesen", "Sport"]<br>
+       }</code></p>
+    </div>
+    <p>Jede API-Antwort besteht meistens aus einem JSON-Objekt mit strukturierten Daten.</p><hr>
+  </section>
+  <section class="main-section" id="Beispiel_Request">
+    <header>Beispiel Request</header>
+    <p>Hier ist ein einfacher API-Request mit JavaScript und der fetch()-Funktion:</p>
+    <div class="example_three">
+    <p><code>javascript</code></p>
+    <p><code>fetch("https://api.example.com/users")<br>
+  .then(response => {<br>
+    if (!response.ok) {<br>
+      throw new Error("Fehler beim Laden der Daten");<br>
+    }<br>
+    return response.json();<br>
+  })<br>
+  .then(data => {<br>
+    console.log(data);<br>
+  })<br>
+  .catch(error => {<br>
+    console.error("Fehler:", error);<br>
+  });</code></p><br>
+    </div>
+  <p>Dieser Code ruft Daten von einer API ab und gibt sie in der Konsole aus. Das ist der Standardweg, um APIs im Browser anzusprechen.</p><hr>
+  </section>
+  <section class="main-section" id="Sicherheit">
+    <header>Sicherheit</header>
+    <p>APIs dürfen nicht für jeden öffentlich zugänglich sein. Es gibt mehrere Sicherheitsmechanismen:</p>
+
+    <p><strong>1. API-Keys</strong></p>
+    <p>Ein API-Key ist ein geheimer Schlüssel, den du bei Anfragen mitschickst:</p>
+    <div class="example_four">
+    <p><code>http</code></p>
+    <p><code>GET https://api.example.com/data?apikey=123456</code></p>
+    </div>
+    <p><strong>2. OAuth</strong></p>    
+    <p>Ein modernes Authentifizierungssystem, z. B. für „Login mit Google“. Der Nutzer gibt einer App Zugriff auf bestimmte Daten.</p>
+    <p><strong>3. CORS (Cross-Origin Resource Sharing)</strong></p>
+    <p>Browser-Sicherheitsfunktion, die regelt, welche Webseiten auf eine API zugreifen dürfen.</p>
+    <p><strong>4. Rate Limiting</strong></p>
+    <p>Begrenzt, wie oft ein Nutzer in einer bestimmten Zeit Anfragen senden darf – zum Schutz vor Missbrauch.</p><hr>
+  </section>
+  <section class="main-section" id="Fazit">
+    <header>Fazit</header>
+    <p>Eine API ist wie ein Kellner in einem Restaurant: Sie nimmt deine Bestellung entgegen (z. B. „Zeig mir die Nutzerdaten“), leitet sie an die Küche (den Server) weiter und bringt dir das fertige Gericht (Daten) zurück.</p>
+    <p>Wenn du verstehst, wie APIs funktionieren, kannst du Websites mit externen Daten verbinden, eigene Services anbieten oder komplexe Anwendungen bauen. APIs gehören zum Handwerkszeug jedes modernen Entwicklers!</p>
+  </section>
+ </main>
+</body>
+</html>
