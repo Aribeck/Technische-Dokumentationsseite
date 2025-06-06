@@ -39,7 +39,7 @@ nav a {
   display: block;
   padding: 0.5em;
   text-decoration: none;
-  color: #ccc;
+  color: #fff;
 }
 
 .nav-link:hover {
@@ -67,9 +67,11 @@ nav a {
 }
 
 @media (max-width: 600px) {
+   body {
+        flex-direction: column;
+    }
   #navbar {
-    position: fixed;
-    top: 0;
+    position: static;
     width: 100%;
     height: auto;
     border-right: none;
@@ -87,16 +89,21 @@ nav a {
   }
 
   #main-doc {
-    max-width: 100%;
-    height: auto;
-    margin-left: 2rem;
-    margin-right: 5rem;
-    margin-top: 150px;
+   margin: 0;
+    padding: 1em;
   }
 
   #mainheader {
     text-align: center;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .example,
+  .example_one,
+  .example_two,
+  .example_three,
+  .example_four {
+    padding: 1rem;
   }
 }
