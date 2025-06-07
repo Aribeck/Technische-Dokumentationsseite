@@ -80,12 +80,14 @@ nav a {
     flex-direction: row;
     align-items: center;
     color: #ccc;
+    padding: 1em 0;
   }
 
   #navbar ul {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    padding: 0;
   }
 
   #main-doc {
@@ -97,6 +99,9 @@ nav a {
     text-align: center;
     margin-top: 1rem;
     margin-bottom: 1rem;
+    color: #ccc;
+    order: -1;
+    font-size: 1.8rem;
   }
 
   .example,
