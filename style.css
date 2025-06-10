@@ -1,3 +1,7 @@
+* {
+  scroll-behavior: smooth;
+}
+
 html {
   font-size: 16px;
 }
@@ -5,9 +9,10 @@ html {
 body {
   display: flex;
   margin: 0;
-  background-color: #0a072e;
-  color: #ffffff;
-
+  background-color: #1e1e1e;
+  color: #f1f1f1;
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
 }
 
 #navbar header {
@@ -20,30 +25,31 @@ body {
   left: 0;
   width: 250px;
   height: 100vh;
-  padding: 1em;
-  border-right: 2px solid #ffffff;
+  padding: 2rem 1rem;
+  border-right: 2px solid #2c2c2c;
   overflow-y: auto;
+  background-color: #1e1e1e;
 }
 
 #main-doc {
   display: block;
   margin-left: 260px;
-  padding: 2em;
-  
+  padding: 2rem;
+  padding-left: 4rem
 }
 
-nav a {
-  font-size: 1.3rem
-}
 .nav-link {
   display: block;
   padding: 0.5em;
   text-decoration: none;
-  color: #fff;
+  color: #cccccc;
+  margin: 1rem 0;
+  transition: color 0.03s;
+  font-size: 1.4rem;
 }
 
 .nav-link:hover {
-  color: #fff;
+  color: #ffffff;
 }
 
 #navbar ul {
@@ -59,11 +65,29 @@ nav a {
 .example_two,
 .example_three,
 .example_four {
-  border: 2px solid black;
-  padding: 2rem;
+  display: block;
+  border: 1px solid black;
+  border-radius: 6px;
+  padding: 1rem;
   max-width: 100%;
-  background-color: #4d4343;
+  background-color: #2b2b2b;
+  color: #00e5ff;
+  margin-top: 1rem;
+}
+
+ul {
+  padding-left: 1.5rem;
+  margin-top: 1rem;
+}
+
+ul il {
+   margin-bottom: 0.5rem;
+}
+
+#mainheader {
+  font-size: 1.4rem;
   margin-bottom: 2rem;
+  color: #ffffff;
 }
 
 @media (max-width: 600px) {
@@ -111,4 +135,10 @@ nav a {
   .example_four {
     padding: 1rem;
   }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+     * {
+       scroll-behavior: smooth;
+     }
 }
