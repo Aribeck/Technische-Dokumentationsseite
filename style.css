@@ -49,7 +49,7 @@ body {
 }
 
 .nav-link:hover {
-  color: #ffffff;
+  color: #00ccff;
 }
 
 #navbar ul {
@@ -116,7 +116,7 @@ ul il {
 
   #main-doc {
    margin: 0;
-    padding: 1em;
+    padding: 2em;
   }
 
   #mainheader {
